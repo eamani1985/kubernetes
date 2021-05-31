@@ -22,6 +22,9 @@ spec:
       containers:
       - image: nginx
         name:  jenkins-container
+        env:
+        - name:  host
+          value:  0.0.0.0 
         resources:
           requests:
             cpu: "20m"
@@ -33,18 +36,16 @@ spec:
           httpGet:
             path: /
             port: 8080
-          initialDelaySeconds: 40
-          timeoutSeconds: 10
+          initialDelaySeconds: 100
           periodSeconds: 5
         readinessProbe:
           httpGet:
             path: /
             port: 8080
-          initialDelaySeconds: 10
-          timeoutSeconds: 10
+          initialDelaySeconds: 100
         imagePullPolicy: Always
         ports:
-        - containerPort:  8080
+        - containerPort: 8080
           name: jenkins-port
         volumeMounts:
         - mountPath: /data
