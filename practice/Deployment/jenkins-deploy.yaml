@@ -33,7 +33,7 @@ spec:
           httpGet:
             path: /
             port: 8080
-          initialDelaySeconds: 10
+          initialDelaySeconds: 40
           timeoutSeconds: 10
           periodSeconds: 5
         readinessProbe:
