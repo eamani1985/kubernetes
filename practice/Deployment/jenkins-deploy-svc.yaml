@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  Jenkins-service
+spec:
+  selector:
+    app:  jenkins
+  type:  LoadBalancer 
+  ports:
+  - name:  jenkins-port
+    port:  80
+    targetPort:  8080
+    nodePort: 32444
