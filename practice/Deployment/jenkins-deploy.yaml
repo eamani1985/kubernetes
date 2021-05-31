@@ -20,7 +20,7 @@ spec:
         app : jenkins
     spec:
       containers:
-      - image: jenkins/jenkins
+      - image: nginx
         name:  jenkins-container
         resources:
           requests:
