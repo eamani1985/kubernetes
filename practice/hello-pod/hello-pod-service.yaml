@@ -1,0 +1,13 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name:  hello-pod
+spec:
+  selector:
+    app:  pod-practice
+  type:  LoadBalancer
+  ports:
+  - name:  nginx
+    port:  80
+    targetPort:  8080
