@@ -42,9 +42,7 @@ spec:
             port: 8080
           initialDelaySeconds: 10
           timeoutSeconds: 10
-        env:
-        - name:  ENVVARNAME
-          value:  ENVVARVALUE       
+         
         ports:
         - containerPort:  8080
           name: jenkins-port
