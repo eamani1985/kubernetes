@@ -20,7 +20,7 @@ spec:
         app : jenkins
     spec:
       containers:
-      - image: jenkins:2.60.3
+      - image: jenkins/jenkins
         name:  jenkins-container
         resources:
           requests:
