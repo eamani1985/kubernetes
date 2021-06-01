@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  namespace: dev
+  annotations: 
+    name: whatever is true --------------------------------------------
+  labels:
+    name: myapp
+spec:
+  containers:
+  - name: myapp
+    image: httpd
+    terminationMessagePath: /tmp/my-log
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80
