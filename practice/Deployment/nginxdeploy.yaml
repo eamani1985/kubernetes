@@ -1,0 +1,44 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name:  nginx-deploy
+  labels:
+    app: nginx-sample
+spec:
+  replicas: 5
+  strategy:
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 2
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: nginx-sample
+    spec:
+      containers:
+      - image:  nginx
+        name:  nginx
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "500M"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 90
+          timeoutSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 30
+          timeoutSeconds: 10
+            
+        ports:
+        - containerPort:  80
+          name:  nginx-port
+        
+      restartPolicy: Always
+      imagePullPolicy: Always
