@@ -8,17 +8,20 @@ spec:
   replicas: 5
   strategy:
     rollingUpdate:
-      maxSurge: 2
-      maxUnavailable: 2
+      maxSurge: 25%
+      maxUnavailable: 25%
     type: RollingUpdate
+  selector:
+    matchLabels:
+      app: nginx-sample
   template:
     metadata:
       labels:
         app: nginx-sample
     spec:
       containers:
-      - image:  nginx
-        name:  nginx
+      - image: nginx
+        name: nginx
         resources:
           requests:
             cpu: "500m"
@@ -35,7 +38,7 @@ spec:
             port: 80
           initialDelaySeconds: 30
           timeoutSeconds: 10
-            
+        
         ports:
         - containerPort:  80
           name:  nginx-port
