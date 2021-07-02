@@ -43,5 +43,5 @@ spec:
         - containerPort:  80
           name:  nginx-port
         
-      restartPolicy: Always
-      imagePullPolicy: Always
+    restartPolicy: Always
+    imagePullPolicy: Always
