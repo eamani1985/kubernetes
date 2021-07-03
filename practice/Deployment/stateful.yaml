@@ -37,6 +37,6 @@ spec:
         volumeMounts:
         - name: www
           mountPath: /usr/share/nginx/html
-  volumes:
-    - name:  www
-      emptyDir: {}
+      volumes:
+      - name:  www
+        emptyDir: {}
