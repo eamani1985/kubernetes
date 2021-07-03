@@ -18,6 +18,7 @@ spec:
     metadata:
       labels:
         app: nginx-sample
+        foo: bar
     spec:
       containers:
       - image: nginx
