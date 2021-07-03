@@ -3,7 +3,7 @@ kind: PodDisruptionBudget
 metadata:
   name: zk-pdb
 spec:
-  minAvailable: 2
+  minAvailable: 5
   selector:
     matchLabels:
       foo: bar
