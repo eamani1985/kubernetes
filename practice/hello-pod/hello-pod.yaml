@@ -8,14 +8,8 @@ metadata:
 spec:
   containers:
   - name: hello-pod
-    image: nginx
-    resources:
-      limits:
-        memory: "128Mi"
-        cpu: "500m"
-    ports:
-      - containerPort: 80
-        protocol: TCP
+    image: alpine
+   
 
 
 
