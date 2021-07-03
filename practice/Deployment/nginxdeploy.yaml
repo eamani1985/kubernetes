@@ -20,6 +20,13 @@ spec:
         app: nginx-sample
         foo: bar
     spec:
+      topologySpreadConstraints:
+      - maxSkew: 2
+        topologyKey: zone
+        whenUnsatisfiable: DoNotSchedule
+        labelSelector:
+          matchLabels:
+            foo: bar
       containers:
       - image: nginx
         name: nginx
