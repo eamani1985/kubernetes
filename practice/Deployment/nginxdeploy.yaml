@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nginx-sample
 spec:
-  replicas: 5
+  replicas: 6
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -21,7 +21,7 @@ spec:
         foo: bar
     spec:
       topologySpreadConstraints:
-      - maxSkew: 2
+      - maxSkew: 1
         topologyKey: zone
         whenUnsatisfiable: DoNotSchedule
         labelSelector:
